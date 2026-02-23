@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10. Sınıf Biyoloji | Av-Avcı İnfografiği (Canva Görselleri)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #c8e0c0 0%, #a8c9a0 100%);
+      color: #1a2e1f;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* Ana kart - bütünleşik infografik */
+    .infographic {
+      max-width: 1400px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 3rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 30px 50px -20px #1e3f1e;
+      border: 2px solid rgba(150, 200, 150, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    /* Grid sistemleri (orijinal korundu) */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+
+    /* Kart tasarımı (tüm kartlar aynı stilde) */
+    .card {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      border: 2px solid #bcdcb0;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 12px 24px -12px rgba(30, 70, 30, 0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 25px 35px -14px #235f23;
+      border-color: #5fa05f;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 3px dashed #b0d4b0;
+      padding-bottom: 0.7rem;
+      color: #1d4f1d;
+    }
+
+    .card-title i {
+      color: #2d7a2d;
+      font-size: 1.4rem;
+    }
+
+    /* Görsel stilleri */
+    .img-fluid, .example-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1.2rem;
+      border: 4px solid #edffe7;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      background: #d0e8d0; /* placeholder rengi */
+    }
+
+    .example-img { height: 160px; }
+
+    .card:hover .img-fluid,
+    .card:hover .example-img {
+      border-color: #a5d6a5;
+    }
+
+    /* placeholder içeriği (resim yoksa gösterilir) */
+    img {
+      display: block;
+      font-size: 1rem;
+      color: #1f4a1f;
+      text-align: center;
+      position: relative;
+    }
+
+    img::before {
+      content: "🖼️ " attr(alt) " 🌿";
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      transform: translateY(-50%);
+      font-weight: 600;
+      background: rgba(200, 230, 200, 0.7);
+      padding: 0.5rem;
+      border-radius: 2rem;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Özel başlıklar */
+    h1, h2, h3 {
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #1f5a1f, #3e8b3e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 i, h2 i {
+      color: #2b732b;
+      background: none;
+      -webkit-text-fill-color: #2b732b;
+    }
+
+    .header-badge {
+      background: #dff0df;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      display: inline-block;
+      font-weight: 600;
+      border: 2px solid #7fb07f;
+      box-shadow: 0 4px 0 #558855;
+    }
+
+    /* yeni bölüm kartları (ekstra) */
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .extra-card {
+      background: #ecf9ec;
+      border-radius: 2rem;
+      padding: 2rem 1.5rem;
+      border-left: 10px solid #3a8e3a;
+      box-shadow: 0 15px 25px -12px #306530;
+      transition: 0.2s;
+    }
+
+    .extra-card:hover {
+      background: #e2f5e2;
+      transform: scale(1.02);
+      border-left-width: 14px;
+    }
+
+    .extra-card i.fa-3x {
+      color: #2b732b;
+      margin-bottom: 1.2rem;
+    }
+
+    .extra-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 2px dotted #7cb07c;
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .extra-card ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .extra-card li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .extra-card li i {
+      width: 1.8rem;
+      color: #236b23;
+    }
+
+    .note-box {
+      background: #dbe9db;
+      border-radius: 2rem;
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+      border: 2px dashed #4f8b4f;
+      font-size: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .note-box i {
+      font-size: 2rem;
+      color: #236b23;
+    }
+
+    hr {
+      border: 2px solid #b0d6b0;
+      margin: 2rem 0;
+      border-radius: 5px;
+    }
+
+    .footer-note {
+      background: #c6dfc6;
+      padding: 1.2rem;
+      border-radius: 3rem;
+      text-align: center;
+      font-weight: 600;
+      border: 2px solid #6f9e6f;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-4, .extra-grid { grid-template-columns: repeat(2, 1fr); }
+      h1 { font-size: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      .grid-2, .grid-3, .grid-4, .extra-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="infographic">
+    <!-- BAŞLIK -->
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h1><i class="fas fa-paw"></i> AV – AVCI (PREDATÖR–AV) İLİŞKİSİ <i class="fas fa-leaf"></i></h1>
+      <span class="header-badge"><i class="fas fa-graduation-cap"></i> 10. Sınıf Biyoloji • Canva Görsel İnfografiği</span>
+    </div>
+
+    <!-- TANIMLAR (grid-2) -->
+    <div class="grid-2" style="margin-bottom: 2rem;">
+      <div class="card" style="border-left: 8px solid #3e914e;">
+        <div class="card-title"><i class="fas fa-tree"></i> AV (PREY) <span style="margin-left: auto; background: #daf1da; padding: 0.3rem 1rem; border-radius: 30px; color: #1f652f;">Kurban</span></div>
+        <img class="img-fluid" src="images/canva/canva-antelope.jpg" alt="Antilop / ceylan (av örneği)" loading="lazy">
+        <p style="margin-top: 1rem;"><strong>🔹 Tanım:</strong> Besin zincirinin alt basamağında yer alan, başka canlılar tarafından tüketilen organizma.</p>
+      </div>
+
+      <div class="card" style="border-left: 8px solid #cf5a3e;">
+        <div class="card-title"><i class="fas fa-dragon"></i> AVCI (PREDATOR) <span style="margin-left: auto; background: #fcdcd4; padding: 0.3rem 1rem; border-radius: 30px; color: #ac3a27;">Yırtıcı</span></div>
+        <img class="img-fluid" src="images/canva/canva-lion.jpg" alt="Aslan (avcı örneği)" loading="lazy">
+        <p style="margin-top: 1rem;"><strong>🔹 Tanım:</strong> Enerji ihtiyacını başka canlıları avlayarak karşılayan organizma.</p>
+      </div>
+    </div>
+
+    <!-- EKOSİSTEM - POPÜLASYON - DOĞAL SEÇİLİM (grid-3) -->
+    <div class="grid-3" style="margin-bottom: 2rem;">
+      <div class="card">
+        <div class="card-title"><i class="fas fa-globe-asia"></i> Ekosistemdeki Rolü</div>
+        <img class="img-fluid" src="images/canva/canva-wolf.jpg" alt="Kurt ve doğa - popülasyon kontrolü" loading="lazy">
+        <p><small>🔹 Avcılar, hasta ve zayıf bireyleri ayıklayarak popülasyonu sağlıklı tutar.</small></p>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-chart-line"></i> Popülasyon Dengesi</div>
+        <img class="img-fluid" src="images/canva/canva-rabbit.jpg" alt="Tavşan (av) - tam kadraj" loading="lazy">
+        <p><small>🔹 Av ve avcı sayıları birbirini dengeleyen döngüsel bir ilişki içindedir.</small></p>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-dna"></i> Doğal Seçilim</div>
+        <img class="img-fluid" src="images/canva/canva-chameleon.jpg" alt="Bukalemun (kamuflaj)" loading="lazy">
+        <p><small>🔹 Kamuflaj, hız, zehir gibi adaptasyonlar evrimi şekillendirir.</small></p>
+      </div>
+    </div>
+
+    <!-- ÖZELLİKLER (grid-2) -->
+    <div class="grid-2" style="margin-bottom: 2rem;">
+      <div class="card">
+        <div class="card-title"><i class="fas fa-shield-heart"></i> Av Özellikleri & Savunma</div>
+        <img class="img-fluid" src="images/canva/canva-zebra.jpg" alt="Zebra sürüsü - tam kadraj" loading="lazy">
+        <p><small>🔹 Sürü oluşturma, kamuflaj, zehir, hız, dikenler…</small></p>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-fist-raised"></i> Avcı Özellikleri & Avlanma</div>
+        <img class="img-fluid" src="images/canva/canva-cheetah.jpg" alt="Çita (avcı) - tam kadraj" loading="lazy">
+        <p><small>🔹 Keskin duyular, hız, gizlenme, iş birliği, pençe-diş yapısı.</small></p>
+      </div>
+    </div>
+
+    <!-- ARA BAŞLIK + ÖRNEKLER GRID (grid-4) -->
+    <hr>
+    <div style="text-align: center; margin: 2rem 0 1.5rem;">
+      <h2><i class="fas fa-images"></i> Doğadan Av-Avcı Örnekleri</h2>
+      
+    </div>
+
+    <div class="grid-4">
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-lion-zebra.jpg" alt="Aslan → Zebra" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Aslan → Zebra <small>(Savana)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-shark-seal.jpg" alt="Köpekbalığı → Fok" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Köpekbalığı → Fok <small>(Okyanus)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-spider.jpg" alt="Örümcek → Sinek" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Örümcek → Sinek <small>(Karasal)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-owl.jpg" alt="Baykuş → Fare" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Baykuş → Fare <small>(Gece)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-wolf-deer.jpg" alt="Kurt → Geyik" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Kurt → Geyik <small>(Orman)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-snake-frog.jpg" alt="Yılan → Kurbağa" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Yılan → Kurbağa <small>(Sulak alan)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-lynx-rabbit.jpg" alt="Vaşak → Tavşan" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Vaşak → Tavşan <small>(Kuzey)</small></div></div>
+      <div class="card example-card"><img class="example-img" src="images/canva/canva-eagle-fish.jpg" alt="Kartal → Balık" loading="lazy"><div style="margin-top:0.8rem;"><i class="fas fa-arrow-right"></i> Kartal → Balık <small>(Göl/Nehir)</small></div></div>
+    </div>
+
+    <!-- YENİ EK BÖLÜM (DERİNLEMESİNE) – entegre edildi -->
+    <hr>
+    <div style="margin: 2.5rem 0 1rem;">
+      <h2 style="display: flex; align-items: center; gap: 1rem; justify-content: center;">
+        <i class="fas fa-microscope"></i> Av-Avcı İlişkisi: Detaylı İnceleme <i class="fas fa-feather"></i>
+      </h2>
+
+      <div class="extra-grid">
+        <div class="extra-card">
+          <i class="fas fa-shield-alt fa-3x"></i>
+          <h3><i class="fas fa-helmet-battle"></i> Av Savunmaları</h3>
+          <ul>
+            <li><i class="fas fa-leaf"></i> <strong>Kamuflaj</strong> – bukalemun, çekirge</li>
+            <li><i class="fas fa-skull"></i> <strong>Zehir</strong> – ok kurbağası, arı</li>
+            <li><i class="fas fa-users"></i> <strong>Sürü yaşamı</strong> – zebra, balık</li>
+            <li><i class="fas fa-mask"></i> <strong>Taklit</strong> – uğurböceği taklidi</li>
+          </ul>
+          <p style="margin-top: 1rem;"><i class="fas fa-camera"></i> Canva: <em>zehirli_kurbaga</em>, <em>kamuflaj_bocek</em></p>
+        </div>
+
+        <div class="extra-card">
+          <i class="fas fa-paw fa-3x"></i>
+          <h3><i class="fas fa-bolt"></i> Avcı Adaptasyonları</h3>
+          <ul>
+            <li><i class="fas fa-tachometer-alt"></i> <strong>Hız</strong> – çita (120 km/s)</li>
+            <li><i class="fas fa-eye"></i> <strong>Keskin duyular</strong> – baykuş (gece görüşü)</li>
+            <li><i class="fas fa-users"></i> <strong>İş birliği</strong> – kurt sürüsü</li>
+            <li><i class="fas fa-paw"></i> <strong>Gizlenme</strong> – kaplan çizgileri</li>
+          </ul>
+          <p style="margin-top: 1rem;"><i class="fas fa-camera"></i> Canva: <em>cita_kovalamaca</em>, <em>kurt_surusu</em></p>
+        </div>
+
+        <div class="extra-card">
+          <i class="fas fa-chart-line fa-3x"></i>
+          <h3><i class="fas fa-redo-alt"></i> Popülasyon Döngüsü</h3>
+          <p><strong>Kanada vaşağı & tavşanı</strong> örneği: Tavşan artar → vaşak artar → tavşan azalır → vaşak azalır → döngü devam eder.</p>
+          <div style="background: white; border-radius: 1.5rem; padding: 1rem; margin-top: 1rem; text-align: center;">
+            <i class="fas fa-chart-pie"></i> Canva grafik: <strong>avci_av_grafik.png</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BİLGİ NOTU (ekstra) -->
+    <div class="note-box">
+      <i class="fas fa-lightbulb"></i>
+      <span><strong>Bilgi:</strong> Av-avcı ilişkisi ekosistemin sağlıklı işlemesi için şarttır. Doğal dengeyi korur, evrimsel süreci hızlandırır.</span>
+      <i class="fas fa-leaf"></i>
+    </div>
+
+    <!-- Alt Bilgi (footer) -->
+    
+  </div> <!-- .infographic sonu -->
+</body>
+</html>
